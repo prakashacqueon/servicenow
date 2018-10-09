@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update node_type="sys_grid_canvas" unload_date="2018-10-09 09:42:27">
+    <sys_grid_canvas action="INSERT_OR_UPDATE">
+        <legacy_page/>
+        <name>PA New Tab</name>
+        <sys_class_name>sys_grid_canvas</sys_class_name>
+        <sys_created_by>david.loo</sys_created_by>
+        <sys_created_on>2018-10-05 07:36:47</sys_created_on>
+        <sys_id>be225c98db0123008596d426ca9619ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PA New Tab</sys_name>
+        <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+        <sys_update_name>sys_grid_canvas_be225c98db0123008596d426ca9619ba</sys_update_name>
+        <sys_updated_by>david.loo</sys_updated_by>
+        <sys_updated_on>2018-10-05 07:36:47</sys_updated_on>
+        <related_items_node>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab">be225c98db0123008596d426ca9619ba</grid_canvas>
+                <height>4</height>
+                <portal_widget display_value="">7a22905cdb0123008596d426ca96191f</portal_widget>
+                <posx>8</posx>
+                <posy>44</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>david.loo</sys_created_by>
+                <sys_created_on>2018-10-05 07:36:48</sys_created_on>
+                <sys_id>3622905cdb0123008596d426ca961954</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_name>be225c98db0123008596d426ca9619ba</sys_name>
+                <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+                <sys_policy/>
+                <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_3622905cdb0123008596d426ca961954</sys_update_name>
+                <sys_updated_by>david.loo</sys_updated_by>
+                <sys_updated_on>2018-10-05 07:36:48</sys_updated_on>
+                <width>4</width>
+            </sys_grid_canvas_pane>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab">be225c98db0123008596d426ca9619ba</grid_canvas>
+                <height>4</height>
+                <portal_widget display_value="">fa22905cdb0123008596d426ca961921</portal_widget>
+                <posx>8</posx>
+                <posy>32</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>david.loo</sys_created_by>
+                <sys_created_on>2018-10-05 07:36:48</sys_created_on>
+                <sys_id>3a22905cdb0123008596d426ca961943</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_name>be225c98db0123008596d426ca9619ba</sys_name>
+                <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+                <sys_policy/>
+                <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_3a22905cdb0123008596d426ca961943</sys_update_name>
+                <sys_updated_by>david.loo</sys_updated_by>
+                <sys_updated_on>2018-10-05 07:36:48</sys_updated_on>
+                <width>4</width>
+            </sys_grid_canvas_pane>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab">be225c98db0123008596d426ca9619ba</grid_canvas>
+                <height>4</height>
+                <portal_widget display_value="">7a22905cdb0123008596d426ca961930</portal_widget>
+                <posx>4</posx>
+                <posy>16</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>david.loo</sys_created_by>
+                <sys_created_on>2018-10-05 07:36:48</sys_created_on>
+                <sys_id>3e22905cdb0123008596d426ca96193d</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_name>be225c98db0123008596d426ca9619ba</sys_name>
+                <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+                <sys_policy/>
+                <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_3e22905cdb0123008596d426ca96193d</sys_update_name>
+                <sys_updated_by>david.loo</sys_updated_by>
+                <sys_updated_on>2018-10-05 07:36:48</sys_updated_on>
+                <width>4</width>
+            </sys_grid_canvas_pane>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab">be225c98db0123008596d426ca9619ba</grid_canvas>
+                <height>4</height>
+                <portal_widget display_value="">ba22905cdb0123008596d426ca96192e</portal_widget>
+                <posx>4</posx>
+                <posy>28</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>david.loo</sys_created_by>
+                <sys_created_on>2018-10-05 07:36:48</sys_created_on>
+                <sys_id>7222905cdb0123008596d426ca961942</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_name>be225c98db0123008596d426ca9619ba</sys_name>
+                <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+                <sys_policy/>
+                <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_7222905cdb0123008596d426ca961942</sys_update_name>
+                <sys_updated_by>david.loo</sys_updated_by>
+                <sys_updated_on>2018-10-05 07:36:48</sys_updated_on>
+                <width>4</width>
+            </sys_grid_canvas_pane>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab">be225c98db0123008596d426ca9619ba</grid_canvas>
+                <height>4</height>
+                <portal_widget display_value="">7e22905cdb0123008596d426ca961923</portal_widget>
+                <posx>0</posx>
+                <posy>12</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>david.loo</sys_created_by>
+                <sys_created_on>2018-10-05 07:36:48</sys_created_on>
+                <sys_id>7622905cdb0123008596d426ca96193c</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_name>be225c98db0123008596d426ca9619ba</sys_name>
+                <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+                <sys_policy/>
+                <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_7622905cdb0123008596d426ca96193c</sys_update_name>
+                <sys_updated_by>david.loo</sys_updated_by>
+                <sys_updated_on>2018-10-05 07:36:48</sys_updated_on>
+                <width>4</width>
+            </sys_grid_canvas_pane>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab">be225c98db0123008596d426ca9619ba</grid_canvas>
+                <height>4</height>
+                <portal_widget display_value="">7a22905cdb0123008596d426ca96191a</portal_widget>
+                <posx>8</posx>
+                <posy>40</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>david.loo</sys_created_by>
+                <sys_created_on>2018-10-05 07:36:48</sys_created_on>
+                <sys_id>7e22905cdb0123008596d426ca961952</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_name>be225c98db0123008596d426ca9619ba</sys_name>
+                <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+                <sys_policy/>
+                <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_7e22905cdb0123008596d426ca961952</sys_update_name>
+                <sys_updated_by>david.loo</sys_updated_by>
+                <sys_updated_on>2018-10-05 07:36:48</sys_updated_on>
+                <width>4</width>
+            </sys_grid_canvas_pane>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab">be225c98db0123008596d426ca9619ba</grid_canvas>
+                <height>4</height>
+                <portal_widget display_value="">7222905cdb0123008596d426ca961928</portal_widget>
+                <posx>0</posx>
+                <posy>0</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>david.loo</sys_created_by>
+                <sys_created_on>2018-10-05 07:36:48</sys_created_on>
+                <sys_id>b622905cdb0123008596d426ca961937</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_name>be225c98db0123008596d426ca9619ba</sys_name>
+                <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+                <sys_policy/>
+                <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_b622905cdb0123008596d426ca961937</sys_update_name>
+                <sys_updated_by>david.loo</sys_updated_by>
+                <sys_updated_on>2018-10-05 07:36:48</sys_updated_on>
+                <width>4</width>
+            </sys_grid_canvas_pane>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab">be225c98db0123008596d426ca9619ba</grid_canvas>
+                <height>4</height>
+                <portal_widget display_value="">ba22905cdb0123008596d426ca96191d</portal_widget>
+                <posx>4</posx>
+                <posy>24</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>david.loo</sys_created_by>
+                <sys_created_on>2018-10-05 07:36:48</sys_created_on>
+                <sys_id>ba22905cdb0123008596d426ca961940</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_name>be225c98db0123008596d426ca9619ba</sys_name>
+                <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+                <sys_policy/>
+                <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_ba22905cdb0123008596d426ca961940</sys_update_name>
+                <sys_updated_by>david.loo</sys_updated_by>
+                <sys_updated_on>2018-10-05 07:36:48</sys_updated_on>
+                <width>4</width>
+            </sys_grid_canvas_pane>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab">be225c98db0123008596d426ca9619ba</grid_canvas>
+                <height>4</height>
+                <portal_widget display_value="">7222905cdb0123008596d426ca961933</portal_widget>
+                <posx>0</posx>
+                <posy>8</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>david.loo</sys_created_by>
+                <sys_created_on>2018-10-05 07:36:48</sys_created_on>
+                <sys_id>be22905cdb0123008596d426ca96193a</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_name>be225c98db0123008596d426ca9619ba</sys_name>
+                <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+                <sys_policy/>
+                <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_be22905cdb0123008596d426ca96193a</sys_update_name>
+                <sys_updated_by>david.loo</sys_updated_by>
+                <sys_updated_on>2018-10-05 07:36:48</sys_updated_on>
+                <width>4</width>
+            </sys_grid_canvas_pane>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab">be225c98db0123008596d426ca9619ba</grid_canvas>
+                <height>4</height>
+                <portal_widget display_value="">7a22905cdb0123008596d426ca96192a</portal_widget>
+                <posx>4</posx>
+                <posy>20</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>david.loo</sys_created_by>
+                <sys_created_on>2018-10-05 07:36:48</sys_created_on>
+                <sys_id>f222905cdb0123008596d426ca96193f</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_name>be225c98db0123008596d426ca9619ba</sys_name>
+                <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+                <sys_policy/>
+                <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_f222905cdb0123008596d426ca96193f</sys_update_name>
+                <sys_updated_by>david.loo</sys_updated_by>
+                <sys_updated_on>2018-10-05 07:36:48</sys_updated_on>
+                <width>4</width>
+            </sys_grid_canvas_pane>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab">be225c98db0123008596d426ca9619ba</grid_canvas>
+                <height>4</height>
+                <portal_widget display_value="">3a22905cdb0123008596d426ca96192c</portal_widget>
+                <posx>0</posx>
+                <posy>4</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>david.loo</sys_created_by>
+                <sys_created_on>2018-10-05 07:36:48</sys_created_on>
+                <sys_id>f622905cdb0123008596d426ca961939</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_name>be225c98db0123008596d426ca9619ba</sys_name>
+                <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+                <sys_policy/>
+                <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_f622905cdb0123008596d426ca961939</sys_update_name>
+                <sys_updated_by>david.loo</sys_updated_by>
+                <sys_updated_on>2018-10-05 07:36:48</sys_updated_on>
+                <width>4</width>
+            </sys_grid_canvas_pane>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab">be225c98db0123008596d426ca9619ba</grid_canvas>
+                <height>4</height>
+                <portal_widget display_value="">fe22905cdb0123008596d426ca961925</portal_widget>
+                <posx>8</posx>
+                <posy>36</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>david.loo</sys_created_by>
+                <sys_created_on>2018-10-05 07:36:48</sys_created_on>
+                <sys_id>fe22905cdb0123008596d426ca961944</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_name>be225c98db0123008596d426ca9619ba</sys_name>
+                <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+                <sys_policy/>
+                <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_fe22905cdb0123008596d426ca961944</sys_update_name>
+                <sys_updated_by>david.loo</sys_updated_by>
+                <sys_updated_on>2018-10-05 07:36:48</sys_updated_on>
+                <width>4</width>
+            </sys_grid_canvas_pane>
+        </related_items_node>
+    </sys_grid_canvas>
+</record_update>

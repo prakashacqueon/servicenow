@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description/>
+        <media_type/>
+        <name>acqclicktocall</name>
+        <scoped_name>x_241495_acqcti_acqclicktocall</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-09-27 14:23:13</sys_created_on>
+        <sys_id>8d62a479dbfc23008596d426ca96191a</sys_id>
+        <sys_mod_count>41</sys_mod_count>
+        <sys_name>acqclicktocall</sys_name>
+        <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+        <sys_update_name>sys_ui_macro_8d62a479dbfc23008596d426ca96191a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-03 09:41:08</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	
+	<script>
+		function processClick(){
+			var sys_id = g_form.getValue('caller_id');
+			console.log("UI MACRO : SELECTED INCIDENT CALLER : " + sys_id);
+		
+			var ga = new GlideAjax('GetCallerId');
+			ga.addParam('sysparm_name','getCallerPhone');
+			ga.addParam('sysparm_sysid',sys_id);
+			ga.getXML(callbackUserid);
+		}
+		
+		function callbackUserid(response)
+		{
+			console.log("Response in UI MACRO : ");
+			console.log(response);
+			var answer = response.responseXML.documentElement.getAttribute("answer");
+			console.log(answer);
+		
+			if(answer.length > 0){
+				var payload = {"type": "CLICK_CALL", "data" : answer, "sys_id" : g_form.getValue('caller_id')};
+				var context = {"payload": payload, "method" : "openframe_communication" };
+				CustomEvent.fireAll("openframe_request", context);
+			}else{
+				alert("Phone Number not assigned for this Caller");
+			}
+		}
+	</script>
+	
+	
+	<a id="${jvar_n}" name="${jvar_n}"
+	   href="#" onclick="processClick()"
+	class="btn btn-ref btn-default icon-phone">
+		 <span class="sr-only">
+		 </span>
+	</a>
+	
+</j:jelly>
+]]></xml>
+    </sys_ui_macro>
+</record_update>

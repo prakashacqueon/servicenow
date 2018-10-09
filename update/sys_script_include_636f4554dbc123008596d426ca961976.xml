@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_241495_acqcti.FinesseCredentials</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>FinesseCredentials</name>
+        <script><![CDATA[var FinesseCredentials = Class.create();
+FinesseCredentials.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	getCredentials:function(){
+		var json = new global.JSON();
+		var sys_id = gs.getUserID();
+		
+		var gr = new GlideRecord('x_241495_acqcti_finesse_configuration');
+		gr.addQuery("sn_user",sys_id);
+		gr.query();
+		
+		if(gr.next()){
+			var result = {
+				"username" : gr.getValue("finesse_username"),
+				"password" : gr.finesse_password.getDecryptedValue(),
+				"extension" : gr.getValue("finesse_extension")
+			};
+			return json.encode(result);
+		}
+	},
+    type: 'FinesseCredentials'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-05 12:07:21</sys_created_on>
+        <sys_id>636f4554dbc123008596d426ca961976</sys_id>
+        <sys_mod_count>42</sys_mod_count>
+        <sys_name>FinesseCredentials</sys_name>
+        <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
+        <sys_update_name>sys_script_include_636f4554dbc123008596d426ca961976</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-05 13:51:49</sys_updated_on>
+    </sys_script_include>
+</record_update>

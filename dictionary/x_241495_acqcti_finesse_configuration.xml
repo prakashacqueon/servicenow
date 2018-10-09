@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Finesse Configuration" max_length="40" name="x_241495_acqcti_finesse_configuration" type="collection">
+        <element label="Finesse Extension" max_length="10" name="finesse_extension" type="string"/>
+        <element label="Finesse Password" max_length="255" name="finesse_password" type="password2"/>
+        <element label="Finesse Username" max_length="10" name="finesse_username" type="string"/>
+        <element label="SN User" max_length="32" name="sn_user" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="sn_user"/>
+        </index>
+    </element>
+</database>
