@@ -2,6 +2,7 @@
     <sys_ui_page action="INSERT_OR_UPDATE">
         <category>general</category>
         <client_script><![CDATA[var frame = document.getElementById('finesse_frame');
+
 var arr = frame.src.split("/");
 var frameDomain = arr[0] + "//" + arr[2];
 console.log("frameDomain : " + frameDomain);
@@ -9,10 +10,16 @@ console.log("frameDomain : " + frameDomain);
 var caller_sys_id;
 var newFormURL;
 
+var frameWidth = 300;
+var frameHeight = 700;
+var frameBottom = 10;
+var frameRight =10;
+
 var config = {
-	height: 700,
-	width: 300
+	height: frameHeight,
+	width: frameWidth
 };
+
 
 function handleCommunicationEvent(context) {
 	console.log("Communication from Topframe", context);
@@ -22,13 +29,15 @@ function handleCommunicationEvent(context) {
 		communicateWithInnerFrame(context);
 		caller_sys_id = context.sys_id;
 		fetchCallerIncidents();
-// 		getUserId(context.data);
+		// 		getUserId(context.data);
 	}else if(context.type === "UI_INCIDENT_SELECT"){
 		communicateWithInnerFrame(context);
 	}
 }
+
 function initSuccess(snConfig) {
 	console.log("openframe configuration",snConfig);
+	
 	//register for communication event from TopFrame
 	openFrameAPI.subscribe(openFrameAPI.EVENTS.COMMUNICATION_EVENT,
 	handleCommunicationEvent);
@@ -42,11 +51,14 @@ function initFailure(error) {
 openFrameAPI.init(config, initSuccess, initFailure);
 
 function communicateWithInnerFrame(data){
-	console.log("Sending data to inner frame : ");
-	console.log(data);
+	console.log("Sending data to inner frame : ",data);
 	frame.contentWindow.postMessage(data, '*');
 }
 
+window.addEventListener("DOMContentLoaded", function(){
+	var openframe = getTopWindow().document.getElementById('mainFrame');
+	openframe.setAttribute("style","right:"+frameRight+"px;bottom:"+frameBottom+"px;width:"+frameWidth+"px");
+});
 
 //add eventlistener for message event from inner frame
 if (window.addEventListener) {
@@ -66,127 +78,130 @@ function innerFrameListener(event) {
 			openFrameAPI.hide();
 		}else if(dataArr[0] === "SHOW_INBOUND"){
 			newFormURL = dataArr[2];
-			showInbound(dataArr[1]);
+			openFrameAPI.show();
+			getUserId(dataArr[1],true);
 		}else if(dataArr[0] === "SHOW_OUTBOUND"){
-// 			var outcallerid = dataArr[1];
-// 			openFrameAPI.show();
-// 			getUserId(outcallerid,"outbound");
+			newFormURL = dataArr[2];
+			openFrameAPI.show();
+			getUserId(dataArr[1],true);
 		}else if(dataArr[0] === "SHOW_USER_INCIDENTS"){
 			getUserId(dataArr[1]);
 		}else if(dataArr[0] === "OPEN_INCIDENT"){
 			openFrameAPI.openServiceNowForm({entity:'incident', query:'sys_id='+dataArr[1]});
-			var hideFrame = dataArr[2];
-			if(hideFrame == "true")
-				openFrameAPI.hide();
-		}
-	} else {
-		return;
-	}
-}
-
-function showInbound(incallerid){
-	openFrameAPI.show();
-	getUserId(incallerid,"inbound");
-}
-
-function updateActivity(incidentId, dataObj){
-// 	var gr = new GlideRecord('incident');
-// 	gr.addQuery("number",incidentId);
-// 	gr.query();
-// 	if(gr.next()) {
-// 		if(updateType == "work_notes"){
-// 			gr.work_notes = comment;
-// 		}else if(updateType == "comments"){
-// 			gr.comments = comment;
-// 		}
-// 		gr.update();
-// 	}
-	$j.ajax({
-		url: "/api/now/table/incident/"+incidentId,
-		type: 'PUT',
-		contentType: 'application/json',
-		data: dataObj,
-		headers: { 'Accept': 'application/json','X-UserToken': window.g_ck},
-		success: function(res) {
-			console.log("UpdateActivity : result : " + JSON.stringify(res));
-		}
-	});
-}
-
-function getUserId(phone,callType){
-// 	var gr = new GlideRecord('sys_user');
-// 	gr.addQuery("phone",phone);
-// 	gr.query();
-// 	if(gr.next()) {
-// 		console.log("Result in getUserId : ");
-// 		console.log(gr.sys_id);
-// 		caller_sys_id=gr.sys_id;
-// 		fetchCallerIncidents();
-// 		return gr.sys_id;
-// 	}
-// 	return null;
-	
-	$j.ajax({
-		url: "/api/now/table/sys_user?sysparm_query=phone="+phone+"&sysparm_fields=sys_id",
-		type: 'GET',
-		headers: { 'Accept': 'application/json','X-UserToken': window.g_ck},
-		success: function(res) {
-			console.log("Result in getUserId : " + JSON.stringify(res));
-			if(res.result.length > 0){
-				caller_sys_id=res.result[0].sys_id;
-			
-				if(callType == "inbound" && caller_sys_id != null){
-					openFrameAPI.openServiceNowForm({entity:'sys_user', query:'sysparm_query=phone='+phone+'&sysparm_view=ITIL'});
-				}
-
-				fetchCallerIncidents();
-			}else if(res.result.length == 0 && callType == "inbound"){
-				openFrameAPI.openCustomURL(newFormURL);
+				var hideFrame = dataArr[2];
+				if(hideFrame == "true")
+					openFrameAPI.hide();
 			}
-		}
-	});
-}
-
-function fetchCallerIncidents(){
-	$j.ajax({
-		url: '/api/now/table/incident?sysparm_query=caller_id='+caller_sys_id+'^active=true^ORDERBYDESCsys_created_on&sysparm_fields=sys_id,number,sys_created_on,sys_created_by',
-		type: 'GET',
-		headers: { 'Accept': 'application/json','X-UserToken': window.g_ck},
-		success: function(res) {
-			console.log("Result in fetchCallerIncidents : ");
-			console.log(res);
-			var data = { type: "CALLER_INCIDENTS", data: res };
-			communicateWithInnerFrame(data);
-		}
-	});
-}
-
-function fetchFinesseCredentials(){
-	var ga = new GlideAjax('FinesseCredentials');
-	ga.addParam('sysparm_name','getCredentials');
-	ga.getXML(parseFinesseCredentials);
-}
-
-function parseFinesseCredentials(response)
-{
-	console.log("Response in parseFinesseCredentials : ");
-	console.log(response);
-	var answer = response.responseXML.documentElement.getAttribute("answer");
-	console.log(answer);
-	if(answer != null){
-		var result = JSON.parse(answer);
-		if(result.username != null){
-			result.type = "LOGIN";
-			communicateWithInnerFrame(result);
+		} else {
+			return;
 		}
 	}
-}]]></client_script>
+	
+	function showInbound(incallerid){
+		openFrameAPI.show();
+		getUserId(incallerid,true);
+	}
+	
+	function updateActivity(incidentId, dataObj){
+		// 	var gr = new GlideRecord('incident');
+		// 	gr.addQuery("number",incidentId);
+		// 	gr.query();
+		// 	if(gr.next()) {
+			// 		if(updateType == "work_notes"){
+				// 			gr.work_notes = comment;
+				// 		}else if(updateType == "comments"){
+					// 			gr.comments = comment;
+					// 		}
+					// 		gr.update();
+					// 	}
+					$j.ajax({
+						url: "/api/now/table/incident/"+incidentId,
+						type: 'PUT',
+						contentType: 'application/json',
+						data: dataObj,
+						headers: { 'Accept': 'application/json','X-UserToken': window.g_ck},
+							success: function(res) {
+								console.log("UpdateActivity : result : " + JSON.stringify(res));
+							}
+						});
+					}
+					
+					function getUserId(phone,showNewFrom){
+						// 	var gr = new GlideRecord('sys_user');
+						// 	gr.addQuery("phone",phone);
+						// 	gr.query();
+						// 	if(gr.next()) {
+							// 		console.log("Result in getUserId : ");
+							// 		console.log(gr.sys_id);
+							// 		caller_sys_id=gr.sys_id;
+							// 		fetchCallerIncidents();
+							// 		return gr.sys_id;
+							// 	}
+							// 	return null;
+							
+							$j.ajax({
+								url: "/api/now/table/sys_user?sysparm_query=phone="+phone+"^ORhome_phone="+phone+"^NQmobile_phone="+phone+"&sysparm_fields=sys_id",
+								type: 'GET',
+								headers: { 'Accept': 'application/json','X-UserToken': window.g_ck},
+									success: function(res) {
+										console.log("Result in getUserId : " + JSON.stringify(res));
+										if(res.result.length > 0){
+											caller_sys_id=res.result[0].sys_id;
+											
+											if(showNewFrom == true && caller_sys_id != null){
+												openFrameAPI.openServiceNowForm({entity:'sys_user', query:'sysparm_query=phone='+phone+'^ORhome_phone='+phone+'^NQmobile_phone='+phone+'&sysparm_view=ITIL'});
+												}
+												
+												fetchCallerIncidents();
+											}else if(res.result.length == 0 && showNewFrom == true){
+												openFrameAPI.openCustomURL(newFormURL);
+											}
+										}
+									});
+								}
+								
+								function fetchCallerIncidents(){
+									$j.ajax({
+										url: '/api/now/table/incident?sysparm_query=caller_id='+caller_sys_id+'^active=true^ORDERBYDESCsys_created_on&sysparm_fields=sys_id,number,sys_created_on,sys_created_by',
+										type: 'GET',
+										headers: { 'Accept': 'application/json','X-UserToken': window.g_ck},
+											success: function(res) {
+												console.log("Result in fetchCallerIncidents : ");
+												console.log(res);
+												var data = { type: "CALLER_INCIDENTS", data: res };
+													communicateWithInnerFrame(data);
+												}
+											});
+										}
+										
+										function fetchFinesseCredentials(){
+											var ga = new GlideAjax('FinesseCredentials');
+											ga.addParam('sysparm_name','getCredentials');
+											ga.getXML(parseFinesseCredentials);
+										}
+										
+										function parseFinesseCredentials(response)
+										{
+											console.log("Response in parseFinesseCredentials : ");
+											console.log(response);
+											var answer = response.responseXML.documentElement.getAttribute("answer");
+											console.log(answer);
+											if(answer != null){
+												var result = JSON.parse(answer);
+												if(result.username != null){
+													result.type = "LOGIN";
+													communicateWithInnerFrame(result);
+												}
+											}
+										}]]></client_script>
         <description/>
         <direct>false</direct>
         <endpoint>x_241495_acqcti_index.do</endpoint>
         <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
 	<g:requires name="x_241495_acqcti.openframeapi.jsdbx" />
+	<g:requires name="x_241495_acqcti.MyScript.jsdbx" />
+	
 	<iframe src="${gs.getMessage(gs.getProperty('x_241495_acqcti.appurl'))}" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%" id="finesse_frame"></iframe> 
 </j:jelly>]]></html>
         <name>index</name>
@@ -195,13 +210,13 @@ function parseFinesseCredentials(response)
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-09-27 14:20:55</sys_created_on>
         <sys_id>e8a16c39dbfc23008596d426ca9619f3</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>99</sys_mod_count>
         <sys_name>index</sys_name>
         <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
         <sys_policy/>
         <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
         <sys_update_name>sys_ui_page_e8a16c39dbfc23008596d426ca9619f3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-05 13:46:19</sys_updated_on>
+        <sys_updated_on>2018-10-22 09:53:20</sys_updated_on>
     </sys_ui_page>
 </record_update>
