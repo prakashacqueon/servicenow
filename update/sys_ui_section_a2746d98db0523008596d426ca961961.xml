@@ -4,13 +4,13 @@
             <element>finesse_username</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-05 13:36:24</sys_created_on>
-            <sys_id>e6746d98db0523008596d426ca961963</sys_id>
+            <sys_created_on>2018-10-05 13:37:01</sys_created_on>
+            <sys_id>e39421d8db0523008596d426ca96192e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_241495_acqcti_finesse_configuration" sys_domain="global" view="Default view">a2746d98db0523008596d426ca961961</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-05 13:36:24</sys_updated_on>
+            <sys_updated_on>2018-10-05 13:37:01</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>finesse_password</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-05 13:36:24</sys_created_on>
-            <sys_id>6a746d98db0523008596d426ca961963</sys_id>
+            <sys_created_on>2018-10-05 13:37:01</sys_created_on>
+            <sys_id>679421d8db0523008596d426ca96192e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_241495_acqcti_finesse_configuration" sys_domain="global" view="Default view">a2746d98db0523008596d426ca961961</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-05 13:36:24</sys_updated_on>
+            <sys_updated_on>2018-10-05 13:37:01</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>.split</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-05 13:36:24</sys_created_on>
-            <sys_id>ea746d98db0523008596d426ca961963</sys_id>
+            <sys_created_on>2018-10-05 13:37:01</sys_created_on>
+            <sys_id>e79421d8db0523008596d426ca96192e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_241495_acqcti_finesse_configuration" sys_domain="global" view="Default view">a2746d98db0523008596d426ca961961</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-05 13:36:24</sys_updated_on>
+            <sys_updated_on>2018-10-05 13:37:01</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>finesse_extension</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-05 13:36:24</sys_created_on>
-            <sys_id>6e746d98db0523008596d426ca961963</sys_id>
+            <sys_created_on>2018-10-05 13:37:01</sys_created_on>
+            <sys_id>6b9421d8db0523008596d426ca96192e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_241495_acqcti_finesse_configuration" sys_domain="global" view="Default view">a2746d98db0523008596d426ca961961</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-05 13:36:24</sys_updated_on>
+            <sys_updated_on>2018-10-05 13:37:01</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -60,13 +60,13 @@
             <element>sn_user</element>
             <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-05 13:36:24</sys_created_on>
-            <sys_id>ee746d98db0523008596d426ca961963</sys_id>
+            <sys_created_on>2018-10-05 13:37:01</sys_created_on>
+            <sys_id>eb9421d8db0523008596d426ca96192e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_241495_acqcti_finesse_configuration" sys_domain="global" view="Default view">a2746d98db0523008596d426ca961961</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-05 13:36:24</sys_updated_on>
+            <sys_updated_on>2018-10-05 13:37:01</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -77,7 +77,7 @@
             <roles/>
             <sys_class_name>sys_ui_section</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-05 13:36:24</sys_created_on>
+            <sys_created_on>2018-10-05 13:35:24</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>a2746d98db0523008596d426ca961961</sys_id>
@@ -89,9 +89,9 @@
             <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
             <sys_update_name>sys_ui_section_a2746d98db0523008596d426ca961961</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-05 13:36:24</sys_updated_on>
+            <sys_updated_on>2018-10-05 13:35:24</sys_updated_on>
             <sys_user/>
-            <title>false</title>
+            <title>true</title>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>
         </sys_ui_section>
