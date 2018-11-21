@@ -78,19 +78,20 @@ function innerFrameListener(event) {
 		}else if(dataArr[0] === "HIDE_FRAME"){
 			openFrameAPI.hide();
 		}else if(dataArr[0] === "SHOW_INBOUND"){
-			newFormURL = dataArr[2];
+			newFormURL = dataArr[3];
 			openFrameAPI.show();
-			getUserId(dataArr[1],true);
+			var inCallerId = dataArr[1];
+			var incidentNumber = dataArr[2];
+			getUserId(inCallerId,true,incidentNumber);
+			
 		}else if(dataArr[0] === "SHOW_OUTBOUND"){
 			console.log("isClickToCall : ",isClickToCall);
 			newFormURL = dataArr[2];
 			openFrameAPI.show();
 			if(isClickToCall == false)
-				getUserId(dataArr[1],true);
+				getUserId(dataArr[1],true,"DNIS",null);
 			
 			isClickToCall = false;
-		}else if(dataArr[0] === "SHOW_USER_INCIDENTS"){
-			getUserId(dataArr[1]);
 		}else if(dataArr[0] === "OPEN_INCIDENT"){
 			openFrameAPI.openServiceNowForm({entity:'incident', query:'sys_id='+dataArr[1]});
 				var hideFrame = dataArr[2];
@@ -102,23 +103,7 @@ function innerFrameListener(event) {
 		}
 	}
 	
-	function showInbound(incallerid){
-		openFrameAPI.show();
-		getUserId(incallerid,true);
-	}
-	
 	function updateActivity(incidentId, dataObj){
-		// 	var gr = new GlideRecord('incident');
-		// 	gr.addQuery("number",incidentId);
-		// 	gr.query();
-		// 	if(gr.next()) {
-		// 		if(updateType == "work_notes"){
-		// 			gr.work_notes = comment;
-		// 		}else if(updateType == "comments"){
-		// 			gr.comments = comment;
-		// 		}
-		// 		gr.update();
-		// 	}
 		$j.ajax({
 			url: "/api/now/table/incident/"+incidentId,
 			type: 'PUT',
@@ -131,19 +116,7 @@ function innerFrameListener(event) {
 		});
 	}
 
-	function getUserId(phone,showNewFrom){
-		// 	var gr = new GlideRecord('sys_user');
-		// 	gr.addQuery("phone",phone);
-		// 	gr.query();
-		// 	if(gr.next()) {
-		// 		console.log("Result in getUserId : ");
-		// 		console.log(gr.sys_id);
-		// 		caller_sys_id=gr.sys_id;
-		// 		fetchCallerIncidents();
-		// 		return gr.sys_id;
-		// 	}
-		// 	return null;
-
+	function getUserId(phone,showNewFrom,incidentNumber){
 		$j.ajax({
 			url: "/api/now/table/sys_user?sysparm_query=phone="+phone+"^ORhome_phone="+phone+"^NQmobile_phone="+phone+"&sysparm_fields=sys_id",
 			type: 'GET',
@@ -154,7 +127,12 @@ function innerFrameListener(event) {
 					caller_sys_id=res.result[0].sys_id;
 
 					if(showNewFrom == true && caller_sys_id != null){
-						openFrameAPI.openServiceNowForm({entity:'sys_user', query:'sysparm_query=phone='+phone+'^ORhome_phone='+phone+'^NQmobile_phone='+phone+'&sysparm_view=ITIL'});
+						console.log("incident number value : " + incidentNumber);
+						if(incidentNumber.length > 0){
+							openFrameAPI.openServiceNowForm({entity:'incident', query:'sysparm_query=number=INC'+incidentNumber+'&sysparm_view=ITIL'});
+						}else {
+							openFrameAPI.openServiceNowForm({entity:'sys_user', query:'sysparm_query=phone='+phone+'^ORhome_phone='+phone+'^NQmobile_phone='+phone+'&sysparm_view=ITIL'});							
+						}
 					}
 
 					fetchCallerIncidents();
@@ -215,13 +193,13 @@ function innerFrameListener(event) {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-09-27 14:20:55</sys_created_on>
         <sys_id>e8a16c39dbfc23008596d426ca9619f3</sys_id>
-        <sys_mod_count>102</sys_mod_count>
+        <sys_mod_count>105</sys_mod_count>
         <sys_name>index</sys_name>
         <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
         <sys_policy/>
         <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
         <sys_update_name>sys_ui_page_e8a16c39dbfc23008596d426ca9619f3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-14 07:24:56</sys_updated_on>
+        <sys_updated_on>2018-11-21 07:48:07</sys_updated_on>
     </sys_ui_page>
 </record_update>
