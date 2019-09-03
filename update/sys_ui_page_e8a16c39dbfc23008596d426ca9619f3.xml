@@ -89,7 +89,7 @@ function innerFrameListener(event) {
 			newFormURL = dataArr[2];
 			openFrameAPI.show();
 			if(isClickToCall == false)
-				getUserId(dataArr[1],true,"DNIS",null);
+				getUserId(dataArr[1],true,null);
 			
 			isClickToCall = false;
 		}else if(dataArr[0] === "OPEN_INCIDENT"){
@@ -128,7 +128,7 @@ function innerFrameListener(event) {
 
 					if(showNewFrom == true && caller_sys_id != null){
 						console.log("incident number value : " + incidentNumber);
-						if(incidentNumber.length > 0){
+						if(incidentNumber != null && incidentNumber.length > 0){
 							openFrameAPI.openServiceNowForm({entity:'incident', query:'sysparm_query=number=INC'+incidentNumber+'&sysparm_view=ITIL'});
 						}else {
 							openFrameAPI.openServiceNowForm({entity:'sys_user', query:'sysparm_query=phone='+phone+'^ORhome_phone='+phone+'^NQmobile_phone='+phone+'&sysparm_view=ITIL'});							
@@ -193,13 +193,13 @@ function innerFrameListener(event) {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-09-27 14:20:55</sys_created_on>
         <sys_id>e8a16c39dbfc23008596d426ca9619f3</sys_id>
-        <sys_mod_count>105</sys_mod_count>
+        <sys_mod_count>107</sys_mod_count>
         <sys_name>index</sys_name>
         <sys_package display_value="AcqCTI" source="x_241495_acqcti">0c9124b5dbfc23008596d426ca9619e1</sys_package>
         <sys_policy/>
         <sys_scope display_value="AcqCTI">0c9124b5dbfc23008596d426ca9619e1</sys_scope>
         <sys_update_name>sys_ui_page_e8a16c39dbfc23008596d426ca9619f3</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-21 07:48:07</sys_updated_on>
+        <sys_updated_by>david.loo</sys_updated_by>
+        <sys_updated_on>2019-09-03 06:37:40</sys_updated_on>
     </sys_ui_page>
 </record_update>
